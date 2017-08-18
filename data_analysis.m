@@ -1,3 +1,4 @@
+% Main data analysis file
 function [starttrial, Ca_spikes_byTrial, match_trial_startIndex, match_trial_endIndex, Ca_spikes_bpod, WaitForCenterPoke_Ca, RewardState_Ca, PunishState_Ca, DeliverStimulus_Ca, TrialOutcomes, TrialTypes]  = data_analysis(centerTime, rewardTime, Ca_events, SessionData)
 
 [centertrial_Times] = trial_data(centerTime);

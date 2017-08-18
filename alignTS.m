@@ -1,3 +1,5 @@
+%Suelynn Ren
+
 function [Ca_spikes_bpod, WaitForCenterPoke_Ca, RewardState_Ca, PunishState_Ca, DeliverStimulus_Ca, TrialOutcomes, TrialTypes] = alignTS(Ca_spikes_byTrial, SessionData, match_trial_startIndex, match_trial_endIndex, starttrial, centertrial_Times)
 
 a=size(Ca_spikes_byTrial);
