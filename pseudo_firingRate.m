@@ -90,8 +90,10 @@ y=set(gca,'YLim',[0.5 (a(2)+0.5)]);
 colorbar;
 
 figure(2);
-x=zeros(1,33);
-for i=1:33
+a=size(firingrate_by_location);
+x=zeros(1,a(1));
+
+for i=1:a(1)
    %x=firingrate_by_location(i,:);
    %y=find(~isnan(x));
    x(i)=median(find(~isnan(firingrate_by_location(i,:))));

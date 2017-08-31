@@ -7,7 +7,7 @@ a=size(calcium_matrix);
 
 
 f1=figure;
-for i=20
+for i=1:a(2)
     x=calcium_matrix(:,i);
     x=cell2mat(x);
     
@@ -17,7 +17,7 @@ for i=20
         
         
         scatter(x(:,1),x(:,2))
-        %xlim([-5 5])
+        xlim([-1 1])
         hold on;
         
 %         xlabel('Time-Relative to Receipt of Reward (s)')
@@ -32,14 +32,14 @@ end
 f2=figure;
 legendInfo=cell(1, a(2));
 
-for i=20
+for i=1:a(2)
     x=calcium_matrix(:,i);
     x=cell2mat(x);
     
     if (sum(abs(x))>0)
     
     
-    logicalArray = x(:,1) < 100 & x(:,1) > -100;
+    logicalArray = x(:,1) < 1 & x(:,1) > -1;
     x = x(logicalArray,:);
         if sum(logicalArray)>0
                     scatter(x(:,1),x(:,2));
@@ -61,7 +61,7 @@ end
         grid on;
         plot(xx,yy);
         hold on;
-        %xlim([-5 5])
+        xlim([-1 1])
          
          title('Calcium Events by Neuron');
          xlabel('Time (s)')
