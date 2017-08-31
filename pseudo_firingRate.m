@@ -5,7 +5,7 @@
 %%action trials (i.e. number of trials in which neuron responded/total
 %%trials)
 
-function [spike_bydistance_normalized, firingrate_by_location]=pseudo_firingRate(calcium_matrix, motion)
+function [spike_bydistance_normalized, firingrate_by_location, ca_spikes, ca_spikes_sorted]=pseudo_firingRate(calcium_matrix, motion)
 
 
 
@@ -83,13 +83,13 @@ firingrate_by_location=transpose(spike_bydistance_normalized(:,2:end));
 x=spike_bydistance_normalized(:,1);
 y=1:a(2);
 
-figure(1)
+ca_spikes=figure;
 imagesc(x,y,firingrate_by_location)
 y=set(gca,'YLim',[0.5 (a(2)+0.5)]);
 
 colorbar;
 
-figure(2);
+ca_spikes_sorted=figure;
 a=size(firingrate_by_location);
 x=zeros(1,a(1));
 
